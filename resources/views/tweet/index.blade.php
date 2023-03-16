@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>つぶやきアプリ</title>
 </head>
+
 <body>
     <h1>つぶやきアプリ</h1>
     <div>
@@ -23,9 +24,18 @@
         </form>
     </div>
     <div>
-    @foreach($tweets as $tweet)
-        <p>{{ $tweet->content }}</p>
-    @endforeach
+        @foreach($tweets as $tweet)
+        <details>
+            <summary>{{ $tweet->content }}</summary>
+            <a href="{{ route('tweet.update.index', ['tweetId' => $tweet->id]) }}">編集</a>
+            <form action="{{ route('tweet.delete', ['tweetId' => $tweet->id]) }}" method="post">
+                @method('DELETE')
+                @csrf
+                <button type="submit">削除</button>
+            </form>
+        </details>
+        @endforeach
     </div>
 </body>
+
 </html>
