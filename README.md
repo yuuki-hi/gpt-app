@@ -57,4 +57,7 @@
 ```
 
 ## URL
-- リファレンスをまとめておく場所
+(リファレンスをまとめておく場所)
+
+- Githubのコミットメッセージに使う表現
+https://qiita.com/shikichee/items/a5f922a3ef3aa58a1839
