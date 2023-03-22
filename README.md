@@ -61,3 +61,6 @@
 
 - Githubのコミットメッセージに使う表現
 https://qiita.com/shikichee/items/a5f922a3ef3aa58a1839
+
+- リレーショナルなEloquent Model
+https://migisanblog.com/laravel-eloquent-relation/
