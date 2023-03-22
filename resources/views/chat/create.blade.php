@@ -17,9 +17,11 @@
     <br>
     {{ isset($response_history) ? $response_history : '' }}
     <br>
+    <br>
     自然に関する観光地
     <br>
     {{ isset($response_nature) ? $response_nature : '' }}
+    <br>
     <br>
     食
     <br>

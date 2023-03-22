@@ -28,11 +28,13 @@ class ChatGptController extends Controller
         $sentence = "{$sentence}";
 
         // ChatGPT API処理
-        $response_history = $this->chat_gpt("次の地名の｢歴史的な観光地｣を検索し，簡単な紹介文を作ってください．日本語で応答してください．箇条書きで書いてください．", $sentence);
+        $sentence_system = "次の例のように書いてください．例:\n【建築物の名前】\n紹介文．";
 
-        $response_nature = $this->chat_gpt("次の地名の｢自然が有名な観光地｣を検索し，簡単な紹介文を作ってください．日本語で応答してください．箇条書きで書いてください．", $sentence);
+        $response_history = $this->chat_gpt("次の地名について，歴史的な建築物(神社や寺など)をいくつか紹介してください．絶対に次の例のように書いてください．例:\n【紹介する物の名前】\n紹介文．", $sentence);
 
-        $response_food = $this->chat_gpt("次の地名の｢おすすめグルメ｣を検索し，簡単な紹介文を作ってください．日本語で応答してください．箇条書きで書いてください．", $sentence);
+        $response_nature = $this->chat_gpt("次の地名について，自然に関する観光地(温泉や湖，川，山，滝，森など)をいくつか紹介してください．絶対に次の例のように書いてください．例:\n【紹介する物の名前】\n紹介文．", $sentence);
+
+        $response_food = $this->chat_gpt("次の地名について，おすすめグルメや食文化をいくつか紹介してください．絶対に次の例のように書いてください．例:\n【紹介する物の名前】\n紹介文．", $sentence);
 
         // DBに保存
         $place = new Place();

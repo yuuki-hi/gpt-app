@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('infos', function (Blueprint $table) {
             $table->id();
-            $table->string('history');
-            $table->string('nature');
-            $table->string('food');
+            $table->string('history', 2000);
+            $table->string('nature', 2000);
+            $table->string('food', 2000);
             $table->unsignedBigInteger('place_id');
             $table->timestamps();
 
