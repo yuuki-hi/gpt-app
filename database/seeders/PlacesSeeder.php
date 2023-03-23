@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 
-class TweetsSeeder extends Seeder
+class PlacesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,17 +19,30 @@ class TweetsSeeder extends Seeder
     {
         // placesテーブルに地名を挿入
         DB::table('places')->insert([
-            ['name' => '日光'],
-            ['name' => '箱根'],
+            ['place' => '日光'],
+            ['place' => '箱根'],
         ]);
 
         // place_infosテーブルに情報を挿入
-        DB::table('place_infos')->insert([
-            ['place_id' => 1, 'color' => '赤', 'animal' => '犬', 'number' => 20],
-            ['place_id' => 1, 'color' => '青', 'animal' => '猫', 'number' => 25],
-            ['place_id' => 1, 'color' => '緑', 'animal' => '猿', 'number' => 18],
-            ['place_id' => 2, 'color' => '黄色', 'animal' => '鳥', 'number' => 20],
-            ['place_id' => 2, 'color' => '白', 'animal' => '魚', 'number' => 80],
+        DB::table('infos')->insert([
+            [
+                'place_id' => 1,
+                'history' => '【輪王寺】 日光東照宮の裏手に位置する、真言宗豊山派の寺院。江戸時代初期に徳川家康の命により創建された。',
+                'nature' => '1. 華厳の滝 - 日光国立公園に位置する、高さ97メートルの滝。',
+                'food' => '【銀座ロールの日光店】 銀座ロールは、日光市内でも人気の洋菓子店です'
+            ],
+            [
+                'place_id' => 1,
+                'history' => '【輪王寺】 日光東照宮の裏手に位置する、真言宗豊山派の寺院。江戸時代初期に徳川家康の命により創建された。',
+                'nature' => '1. 華厳の滝 - 日光国立公園に位置する、高さ97メートルの滝。',
+                'food' => '【銀座ロールの日光店】 銀座ロールは、日光市内でも人気の洋菓子店です'
+            ],
+            [
+                'place_id' => 2,
+                'history' => '【輪王寺】 日光東照宮の裏手に位置する、真言宗豊山派の寺院。江戸時代初期に徳川家康の命により創建された。',
+                'nature' => '1. 華厳の滝 - 日光国立公園に位置する、高さ97メートルの滝。',
+                'food' => '【銀座ロールの日光店】 銀座ロールは、日光市内でも人気の洋菓子店です'
+            ],
         ]);
     }
 }
