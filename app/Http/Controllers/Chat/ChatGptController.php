@@ -48,7 +48,8 @@ class ChatGptController extends Controller
 
         $place->info()->save($info);
 
-        return view('chat.create', compact('sentence', 'response_history', 'response_nature', 'response_food'));
+        // return view('chat.create', compact('sentence', 'response_history', 'response_nature', 'response_food'));
+        return redirect("place/".$place->id);
     }
 
     /**
