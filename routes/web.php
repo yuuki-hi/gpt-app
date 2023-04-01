@@ -23,13 +23,13 @@ Route::post('/chat', [\App\Http\Controllers\Chat\ChatGptController::class, 'chat
 
 
 // 観光地ページ
-Route::get('/place', [\App\Http\Controllers\Place\IndexController::class,'show']);
+Route::get('/place', [\App\Http\Controllers\Place\IndexController::class, 'show']);
 
-Route::get('/place/create', [\App\Http\Controllers\Place\CreateController::class,'show']);
+Route::get('/place/create', [\App\Http\Controllers\Place\CreateController::class, 'show']);
 
 Route::post('/place/create', [\App\Http\Controllers\Chat\ChatGptController::class, 'chat'])->name('chat.create');
 
-Route::get('/place/{id}', [\App\Http\Controllers\Place\IndexController::class,'showId']);
+Route::get('/place/{id}', [\App\Http\Controllers\Place\IndexController::class, 'showId']);
 
 // tutorial
 Route::get('/sample', [\App\Http\Controllers\Sample\IndexController::class, 'show']);
