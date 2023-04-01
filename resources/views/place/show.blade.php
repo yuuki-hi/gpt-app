@@ -10,15 +10,33 @@
 
 <body>
     <h1>観光地情報</h1>
-    
+
     <div>
+        @php
+        $history = json_decode($place->info->history);
+        $nature = json_decode($place->info->nature);
+        $food = json_decode($place->info->food);
+        @endphp
+
         <h2>{{ $place->place }}</h2>
         <h3>歴史</h3>
-        <p>{{ $place->info->history }}</p>
+        <ul>
+            @foreach($history as $data)
+            <li>{{ $data->place }} - {{ $data->info }}</li>
+            @endforeach
+        </ul>
         <h3>自然</h3>
-        <p>{{ $place->info->nature }}</p>
+        <ul>
+            @foreach($nature as $data)
+            <li>{{ $data->place }} - {{ $data->info }}</li>
+            @endforeach
+        </ul>
         <h3>食べ物</h3>
-        <p>{{ $place->info->food }}</p>
+        <ul>
+            @foreach($food as $data)
+            <li>{{ $data->place }} - {{ $data->info }}</li>
+            @endforeach
+        </ul>
     </div>
     <a href="/place">編集</a>
     <a href="/place">削除</a>
