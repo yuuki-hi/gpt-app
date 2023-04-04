@@ -79,3 +79,6 @@ https://qiita.com/shikichee/items/a5f922a3ef3aa58a1839
 
 - リレーショナルなEloquent Model
 https://migisanblog.com/laravel-eloquent-relation/
+
+- reactの導入
+https://saunabouya.com/2022/07/25/laravel9-sail-react-typescript-vite/
